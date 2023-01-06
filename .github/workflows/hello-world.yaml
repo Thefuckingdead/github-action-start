@@ -1,7 +1,14 @@
 name: hello wolrd
 on:
-  push: 
-    branches: [main]
+  push:
+    path:
+      - '!README.md'
+      - '!docs/**'
+      - '**.js' 
+    branches:
+      - 'main'
+      - 'release/**'
+      - '!dev/**'
 jobs:
   say-hello:
     runs-on: ubuntu-latest
